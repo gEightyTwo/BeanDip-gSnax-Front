@@ -2,15 +2,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Card from '../components/Card'
 
-const Cards = () => {
+const Cards = (props) => {
   return (
     <div>
-
+    {
       this.props.list.map(card => {
         return (
-        <Card key={card.id} card={card}>
+        <Card key={card.id} card={card} />
       )
       })
+    }
     </div>
   )
 }

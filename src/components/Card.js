@@ -19,7 +19,7 @@ class Card extends React.Component{
     const {card:{name, description, price, img, is_boolean}} = this.props
     return (
       <div className="card col-lg-3 col-md-4 col-sm-6">
-        <img className="card-img-top" src={img} alt="Card image cap"></img>
+        <img className="card-img-top" src={img} alt="Delicious!"></img>
         <div className="card-body">
           <h5 className="card-title">{name}</h5><span>{price}</span>
           <p className="card-text">{description}</p>

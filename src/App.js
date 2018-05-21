@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 
-import Card from './components/Card'
+import Cards from './containers/Cards'
 
 import { getAllSnax, getAllRev} from './actions'
 
@@ -20,8 +20,8 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
-        {/* <Card /> */}
-         <Footer />
+          <Cards />
+        <Footer />
       </div>
     );
   }
