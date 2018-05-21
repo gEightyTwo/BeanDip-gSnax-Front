@@ -8,8 +8,8 @@ export default(props) => (
           <h3>BeanDip</h3>
         </div>
         <div className='navlinks'>
-          <Link className="btn btn-sm btn-outline-secondary" to="/">Sign up</Link>
-          <Link className="btn btn-sm btn-outline-secondary" to="/login">Sign in</Link>
+          <a className="btn btn-sm btn-outline-secondary" to="/">Sign up</a>
+          <a className="btn btn-sm btn-outline-secondary" to="/login">Sign in</a>
           <a href="#" className='hidden'>Log Out</a>
         </div>
       </div>
