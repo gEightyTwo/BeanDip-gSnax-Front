@@ -1,1 +1,0 @@
-# BeanDip-gSnax-Front
