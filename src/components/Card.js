@@ -1,21 +1,36 @@
 import React from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
 
-
-const Card = () => {
-  return (
-    <div className="card col-lg-3 col-md-4 col-sm-6">
-      <img className="card-img-top" src="..." alt="Card image cap">
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
+class Card extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      showModal: false
+    }
+  }
+  toggleModal = () => {
+    this.setState({
+      showModal: !this.state.showModal
+    })
+  }
+  render(){
+    const {card:{name, description, price, img, is_boolean}} = this.props
+    return (
+      <div className="card col-lg-3 col-md-4 col-sm-6">
+        <img className="card-img-top" src={img} alt="Card image cap">
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5><span>{price}</span>
+          <p className="card-text">{description}</p>
+          <button className="btn btn-secondary"
+            onClick={() => this.toggleModal()}>More</button>
+        </div>
+        {
+          this.state.showModal && <Modal />
+        }
       </div>
-    </div>
-  )
+    )
+  }
 }
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ }, dispatch)
+const mapStateToProps = ({ list, reviewList }) => ({ list, reviewList })
 
-export default connect(null, mapDispatchToProps)(Card)
+export default connect(mapStateToProps)(Card)
