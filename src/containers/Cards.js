@@ -6,7 +6,7 @@ const Cards = (props) => {
   return (
     <div>
     {
-      this.props.list.map(card => {
+      props.list.map(card => {
         return (
         <Card key={card.id} card={card} />
       )

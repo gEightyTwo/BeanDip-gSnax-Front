@@ -8,6 +8,7 @@ export const getAllSnax = () => {
   return (dispatch) => {
     axios.get('http://localhost:3000/api/snacks')
     .then((response) => {
+      console.log(response.data);
       dispatch({
         type: GET_ALL_SNAX,
         payload: response.data
