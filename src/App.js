@@ -7,7 +7,7 @@ import Navbar from './components/Navbar'
 
 import Card from './components/Card'
 
-import { getAllSnax, getAllRev} from '../actions'
+import { getAllSnax, getAllRev} from './actions'
 
 
 

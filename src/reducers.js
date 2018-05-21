@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import { GET_ALL_SNAX, GET_ALL_REV } from './actions'
 
+const INITIAL_VALUE = []
 
 const reviewList = (state = [], action) => {
   console.log(state, action)
