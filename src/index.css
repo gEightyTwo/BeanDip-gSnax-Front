@@ -1,15 +1,50 @@
-.navbar {
-  display: flex;
-  /*justify-content: space-between;*/
-  /*align-items: center;*/
-  background-color: white;
-  width: 100vw;
+.jumbotron-billboard .img {
+    margin-bottom: 0px;
+    opacity: 0.1;
+    color: #fff;
+    background: #000 url("https://cdn.homedit.com/wp-content/uploads/2015/05/beautiful-pantry-design-system.jpg") center no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
 }
 
+.jumbotron h2 {
+  margin-top:0;
+  text-align: center;
+
+}
+.jumbotron {
+  position:relative;
+  padding-top:50px;
+  text-align: center;
+  padding-bottom:50px;
+}
+.jumbotron .container {
+  position:relative;
+  z-index:2;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    padding-top:20px;
+    padding-bottom:20px;
+  }
+}
+
+.navbar {
+  display: flex;
+  background-color: white;
+  width: 100vw;
+  margin-top: 0px;
+}
 .navlogo {
   width: 100px;
 }
-
 
 .navlinks {
  width: 300px;
@@ -17,7 +52,7 @@
  text-align: right;
 }
 
-.navlinks a {
+.navlinks btn {
   display: inline-block;
   line-height: 77px;
   margin-right: 15px;
@@ -27,7 +62,13 @@
   cursor: pointer;
   box-sizing: border-box;
 }
-
-.navlinks a:hover {
+.navlinks btn:hover {
   border: 2px;
+}
+
+.footer {
+  display: flex;
+  width: 100vw;
+  border: solid gray 2px;
+  color: black;
 }
