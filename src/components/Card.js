@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Modal from './Modal'
+import MyModal from './MyModal'
 
 class Card extends React.Component{
   constructor(props){
@@ -16,7 +16,7 @@ class Card extends React.Component{
     })
   }
   render(){
-    const {card:{name, description, price, img, is_boolean}} = this.props
+    const {card:{id, name, description, price, img, is_boolean}} = this.props
     return (
       <div className="card col-lg-3 col-md-4 col-sm-6">
 
@@ -25,11 +25,9 @@ class Card extends React.Component{
         <div className="card-body">
           <h5 className="card-title">{name}</h5><span>{price}</span>
           <p className="card-text">{description}</p>
-          <button className="btn btn-secondary"
-            onClick={() => this.toggleModal()}>More</button>
         </div>
         {
-          this.state.showModal && <Modal />
+          <MyModal ogSnackId={id} name={name} description={description} price={price} img={img} is_boolean={is_boolean}/>
         }
       </div>
     )
