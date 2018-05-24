@@ -13,14 +13,21 @@ class Reviews extends Component{
   componentDidMount(){
     this.props.getAllRev()
   }
+
+  addReview() {
+    console.log("adding")
+  }
+
   render(){
     const filtered = this.props.reviewList.filter(rev => rev.snack_id === this.props.snackId)
-    // const filtered = []
     return (
       <div>
+        <form id="addReview">
+        </form>
       {
         filtered.map(review => <Review key={review.id} review={review} />)
       }
+      <button id="addreviewBtn" onClick={this.addReview}>Add Review</button>
       </div>
     )
 
