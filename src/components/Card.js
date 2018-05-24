@@ -32,8 +32,8 @@ class Card extends React.Component {
         <h5 className="card-title">{name}</h5>
       </div>
       <div className="card-body">
-        <img className="card-img-top" src={img} alt="Delicious!"/>
-        <span>Cost: ${price}</span>
+        <img className="rounded-top" src={img} alt="Delicious!"/>
+        <span>${price}</span>
         <p className="card-text">{description}</p>
       </div>
       <div className="card-footer text-muted">
