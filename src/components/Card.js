@@ -29,11 +29,11 @@ class Card extends React.Component {
     return (
     <div className="card col-lg-3 col-md-2 col-sm-2">
       <div className="card-header">
-        <h5 className="card-title">{name}</h5>
+        <h5 className="card-title">{name}</h5> <span>${price}</span>
       </div>
       <div className="card-body">
         <img className="rounded-top" src={img} alt="Delicious!"/>
-        <span>${price}</span>
+        <div className="averageReview"></div>
         <p className="card-text">{description}</p>
       </div>
       <div className="card-footer text-muted">
