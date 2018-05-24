@@ -3,6 +3,7 @@ import axios from 'axios'
 export const GET_ALL_SNAX = 'GET_ALL_SNAX'
 export const GET_ALL_REV = 'GET_ALL_REV'
 export const FILTER_REV = 'FILTER_REV'
+export const POST_REVIEW = 'POST_REVIEW'
 
 export const getAllSnax = () => {
   return (dispatch) => {
@@ -37,6 +38,21 @@ export const filterRev = (snackId) => {
       dispatch({
         type: FILTER_REV,
         payload: filtered
+      })
+    })
+  }
+}
+
+
+export const postReview = (snackId, usersId, title, text, rating) => {
+  console.log(snackId, title, text, rating)
+  return (dispatch) => {
+    axios.post(`http://localhost:3000/reviews/${snackId}`, {usersId, title, text, rating})
+    .then((response) => {
+
+      dispatch({
+        type: POST_REVIEW,
+        payload: response.data
       })
     })
   }
