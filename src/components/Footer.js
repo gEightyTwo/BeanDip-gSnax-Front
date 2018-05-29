@@ -50,7 +50,6 @@ export default(props) => (<footer>
             <i className="fa fa-print mr-3"></i>
             + 01 234 567 89</p>
         </div>
-
       </div>
       <div className="row d-flex align-items-center">
         <div className="col-md-4 col-lg-4 ml-lg-0">
@@ -82,4 +81,5 @@ export default(props) => (<footer>
       </div>
     </div>
   </div>
-</footer>)
+</footer>
+)

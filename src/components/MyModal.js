@@ -33,10 +33,12 @@ class MyModal extends React.Component {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <div className="block-description">
           <img alt="product" src={`${this.props.img}`}/>
           <p>
             {this.props.description}
           </p>
+        </div>
           <Reviews snackId={this.props.ogSnackId}/>
         </Modal.Body>
         <Modal.Footer>
