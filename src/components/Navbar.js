@@ -1,7 +1,8 @@
 import React from 'react'
 
 // import {Link} from 'react-router-dom'
-
+import SignInModal from './SignInModal'
+import SignUpModal from './SignUpModal'
 
 export default(props) => (
   <header>
@@ -13,7 +14,7 @@ export default(props) => (
           <h2>BeanDip</h2>
         </div>
         <div className='navlinks'>
-          <btn className="btn btn-outline-secondary" to="/login">Sign in</btn>
+          {<SignInModal />}
           <button className='hidden'>Log Out</button>
         </div>
       </div>
@@ -25,7 +26,7 @@ export default(props) => (
           <p>
             Find out what other people are saying about your favorite snacks!
           </p>
-          <a href="" className="btn btn-success btn-lg">Sign Up</a>
+          {<SignUpModal />}
         </div>
       </div>
     </div>

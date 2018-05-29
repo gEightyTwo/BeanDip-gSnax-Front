@@ -4,6 +4,7 @@ export const GET_ALL_SNAX = 'GET_ALL_SNAX'
 export const GET_ALL_REV = 'GET_ALL_REV'
 export const FILTER_REV = 'FILTER_REV'
 
+
 export const getAllSnax = () => {
   return (dispatch) => {
     axios.get('http://localhost:3000/api/snacks')
