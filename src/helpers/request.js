@@ -10,7 +10,7 @@ export default function request(path, method = 'get', body = null) {
     bearerToken = `Bearer ${token}`
   }
 
-  return axios(`${process.env.REACT_APP_BACKEND}${path}`, {
+  return axios(`http://localhost:3000${path}`, {
     method: method,
     headers: {
       'Content-Type': 'application/json',
