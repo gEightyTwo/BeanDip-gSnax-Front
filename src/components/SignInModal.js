@@ -1,6 +1,7 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import { request, AuthenticationService } from '../helpers'
 
 import {Modal, Button} from 'react-bootstrap'
 
@@ -32,7 +33,6 @@ class SignInModal extends React.Component {
     .then(response => {
       console.log(response)
       AuthenticationService.setAuthState(response.data)
-      this.props.history.push('/')
     })
     .catch(error => {
       console.log(error)
@@ -55,12 +55,12 @@ class SignInModal extends React.Component {
           <h2>Sign In</h2>
           <form onSubmit={this.handleSignIn}>
             <div className="form-group">
-              <label for="inputEmail">Email address</label>
+              <label htmlFor="inputEmail">Email address</label>
               <input type="email" className="form-control" name="inputEmail" aria-describedby="emailHelp" placeholder="Enter email"/>
               <small id="emailHelp" className="form-text text-muted">Well never share your email with anyone else.</small>
             </div>
             <div className="form-group">
-              <label for="inputPassword">Password</label>
+              <label htmlFor="inputPassword">Password</label>
               <input type="password" className="form-control" name="inputPassword" placeholder="Password"/>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>

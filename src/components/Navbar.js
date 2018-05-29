@@ -1,10 +1,12 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import { withAuthentication, AuthenticationService } from '../helpers'
 
 // import {Link} from 'react-router-dom'
 import SignInModal from './SignInModal'
 import SignUpModal from './SignUpModal'
 
-export default(props) => (
+const Navbar = (props) => (
   <header>
   <div className="jumbotron jumbotron-billboard">
     <div className="img"></div>
@@ -14,8 +16,7 @@ export default(props) => (
           <h2>BeanDip</h2>
         </div>
         <div className='navlinks'>
-          {<SignInModal />}
-          <button className='hidden'>Log Out</button>
+          { this.props.authState ? <button>Log Out</button> : <SignInModal /> }
         </div>
       </div>
     </div>
@@ -33,3 +34,8 @@ export default(props) => (
   </div>
 
 </header>)
+
+
+
+const mapStateToProps = ({ authState }) => ({ authState })
+export default connect(mapStateToProps)(Navbar)
