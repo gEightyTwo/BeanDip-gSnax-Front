@@ -2,7 +2,7 @@ import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import { request, AuthenticationService } from '../helpers'
-
+import {loginSetState} from '../actions'
 import {Modal, Button} from 'react-bootstrap'
 
 // import Reviews from '../containers/Reviews'
@@ -32,7 +32,8 @@ class SignInModal extends React.Component {
     })
     .then(response => {
       console.log(response)
-      AuthenticationService.setAuthState(response.data)
+      this.props.loginSetState(response.data)
+      this.handleHide
     })
     .catch(error => {
       console.log(error)
@@ -75,6 +76,6 @@ class SignInModal extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({}, dispatch)
+const mapDispatchToProps = (dispatch) => bindActionCreators({loginSetState}, dispatch)
 
 export default connect(null, mapDispatchToProps)(SignInModal)
