@@ -4,7 +4,16 @@ export const GET_ALL_SNAX = 'GET_ALL_SNAX'
 export const GET_ALL_REV = 'GET_ALL_REV'
 export const FILTER_REV = 'FILTER_REV'
 export const POST_REVIEW = 'POST_REVIEW'
+export const SET_USERSTATE = 'SET_USERSTATE'
 
+export const loginSetState = (fullResponse) => {
+  return (dispatch) => {
+    dispatch({
+      type: SET_USERSTATE,
+      payload: fullResponse
+    })
+  }
+}
 
 export const getAllSnax = () => {
   return (dispatch) => {
