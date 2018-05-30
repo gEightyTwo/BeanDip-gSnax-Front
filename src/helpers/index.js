@@ -8,4 +8,3 @@ export const AuthenticationService = AuthService
 export const AuthenticatedRoute = AuthRoute
 export const withAuthentication = withAuth
 export const request = req
-// export default { request, AuthenticationService, AuthenticatedRoute, withAuthentication }
