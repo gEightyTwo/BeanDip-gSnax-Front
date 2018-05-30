@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { GET_ALL_SNAX, GET_ALL_REV, SET_USERSTATE } from './actions'
+import { GET_ALL_SNAX, GET_ALL_REV, SET_USERSTATE, DEL_USERSTATE } from './actions'
 
 const INITIAL_VALUE = []
 
@@ -25,6 +25,10 @@ const userState = (state = {}, action) => {
   switch(action.type){
     case SET_USERSTATE:
       return action.payload
+      break;
+    case DEL_USERSTATE:
+      return {}
+      break;
     default:
       return state
 }
