@@ -45,7 +45,6 @@ export const filterRev = (snackId) => {
 }
 
 export const postReview = (snackId, usersId, title, text, rating) => {
-  console.log(snackId, title, text, rating)
   return(dispatch) => {
     axios.post(`http://localhost:3000/reviews/${snackId}`, {usersId, title, text, rating})
     .then((response) => {
@@ -54,23 +53,26 @@ export const postReview = (snackId, usersId, title, text, rating) => {
   }
 }
 
-export const editReview = (reviewsId, title, text, rating) => {
+export const updateReview = (reviewsId, title, text, rating) => {
   console.log(reviewsId, title, text, rating)
   return(dispatch) => {
-    axios.update(`http://localhost:3000/reviews/${reviewsId}`, {title, text, rating})
+    axios.put(`http://localhost:3000/reviews/${reviewsId}`, {title, text, rating})
     .then((response) => {
       console.log(response)
-      dispatch(getAllRev())
+      dispatch(
+        getAllRev()
+      )
+    })
+    .catch(err => {
+      console.log(err)
     })
   }
 }
 
 export const deleteReview = (reviewsId) => {
-  console.log(reviewsId)
   return(dispatch) => {
     axios.delete(`http://localhost:3000/reviews/${reviewsId}`)
     .then((response) => {
-      console.log(response)
       dispatch(getAllRev())
     })
   }

@@ -36,7 +36,7 @@ class Card extends React.Component {
       }
     } = this.props
     return (
-    <div className="card col-lg-3 col-md-2 col-sm-2">
+    <div className="card col-lg-4 col-md-2 col-sm-2">
       <div className="card-header">
         <h5 className="card-title">{name}</h5> <span>${price}</span>
       </div>
