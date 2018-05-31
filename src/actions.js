@@ -9,70 +9,69 @@ export const DEL_USERSTATE = 'DEL_USERSTATE'
 
 
 export const loginSetState = (fullResponse) => {
-  return (dispatch) => {
-    dispatch({
-      type: SET_USERSTATE,
-      payload: fullResponse
-    })
+  return(dispatch) => {
+    dispatch({type: SET_USERSTATE, payload: fullResponse})
   }
 }
 export const logoutSetState = () => {
-  return (dispatch) => {
-    dispatch({
-      type: DEL_USERSTATE,
-    })
+  return(dispatch) => {
+    dispatch({type: DEL_USERSTATE})
   }
 }
 
 export const getAllSnax = () => {
-  return (dispatch) => {
-    axios.get('http://localhost:3000/api/snacks')
-    .then((response) => {
-      console.log(response.data);
-      dispatch({
-        type: GET_ALL_SNAX,
-        payload: response.data
-      })
+  return(dispatch) => {
+    axios.get('http://localhost:3000/api/snacks').then((response) => {
+      dispatch({type: GET_ALL_SNAX, payload: response.data})
     })
 
   }
 }
 export const getAllRev = () => {
-  return (dispatch) => {
-    axios.get('http://localhost:3000/reviews')
-    .then((response) => {
-      dispatch({
-        type: GET_ALL_REV,
-        payload: response.data.allReviews
-      })
+  return(dispatch) => {
+    axios.get('http://localhost:3000/reviews').then((response) => {
+      dispatch({type: GET_ALL_REV, payload: response.data.allReviews})
     })
   }
 }
 
 export const filterRev = (snackId) => {
-  return (dispatch) => {
-    axios.get('http://localhost:3000/reviews')
-    .then((response) => {
+  return(dispatch) => {
+    axios.get('http://localhost:3000/reviews').then((response) => {
       const filtered = response.data.allReviews.filter(rev => rev.snack_id === snackId)
-      dispatch({
-        type: FILTER_REV,
-        payload: filtered
-      })
+      dispatch({type: FILTER_REV, payload: filtered})
     })
   }
 }
 
-
 export const postReview = (snackId, usersId, title, text, rating) => {
   console.log(snackId, title, text, rating)
-  return (dispatch) => {
+  return(dispatch) => {
     axios.post(`http://localhost:3000/reviews/${snackId}`, {usersId, title, text, rating})
     .then((response) => {
+      dispatch(getAllRev())
+    })
+  }
+}
 
-      dispatch({
-        type: POST_REVIEW,
-        payload: response.data
-      })
+export const editReview = (reviewsId, title, text, rating) => {
+  console.log(reviewsId, title, text, rating)
+  return(dispatch) => {
+    axios.update(`http://localhost:3000/reviews/${reviewsId}`, {title, text, rating})
+    .then((response) => {
+      console.log(response)
+      dispatch(getAllRev())
+    })
+  }
+}
+
+export const deleteReview = (reviewsId) => {
+  console.log(reviewsId)
+  return(dispatch) => {
+    axios.delete(`http://localhost:3000/reviews/${reviewsId}`)
+    .then((response) => {
+      console.log(response)
+      dispatch(getAllRev())
     })
   }
 }

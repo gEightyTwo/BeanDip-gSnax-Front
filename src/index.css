@@ -1,5 +1,6 @@
 #cardContainer {
   justify-content: space-around;
+  padding-top: 50px;
 }
 
 #averageRating {
@@ -8,8 +9,8 @@ font-size: 20px;
 
 #addreviewBtn{
   border-radius: 4px;
-  color: black;
-  background-color: #e7e7e7; color: black;
+  /* color: black; */
+  /* background-color: #e7e7e7; color: black; */
   -webkit-transition-duration: 0.4s;
    transition-duration: 0.4s;
 }
@@ -106,11 +107,12 @@ img {
 }
 
 .jumbotron h2 {
-  margin-top: 0;
+  /*margin-top: 0;*/
   text-align: center;
 }
 
 .jumbotron {
+  height: 400px;
   position: relative;
   padding-top: 50px;
   text-align: center;
@@ -131,9 +133,10 @@ img {
 }
 
 .navbar {
-  margin: 0.5em;
+  margin: 0;
   width: 100%;
 }
+
 .navbar-brand{
   font-size: 35px;
 }
@@ -147,7 +150,7 @@ img {
   text-align: right;
 }
 
-/* .navlinks btn {
+.navlinks btn {
   display: inline-block;
   line-height: 77px;
   margin-right: 15px;
@@ -156,11 +159,11 @@ img {
   padding: 0px 15px;
   cursor: pointer;
   box-sizing: border-box;
-} */
+}
 
-/* .navlinks btn:hover {
+.navlinks btn:hover {
   border: 2px;
-} */
+}
 
 .footer {
   /*display: flex;*/

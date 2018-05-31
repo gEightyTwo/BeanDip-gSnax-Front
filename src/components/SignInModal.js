@@ -1,11 +1,10 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import { request, AuthenticationService } from '../helpers'
+import { request } from '../helpers'
 import {loginSetState} from '../actions'
 import {Modal, Button} from 'react-bootstrap'
 
-// import Reviews from '../containers/Reviews'
 
 class SignInModal extends React.Component {
   constructor(props, context) {
@@ -42,7 +41,7 @@ class SignInModal extends React.Component {
   }
   render() {
     return (<div className="modal-container">
-      <Button bsStyle="primary" bsSize="large" onClick={() => this.setState({show: true})}>
+      <Button bsStyle="link" bsSize="large" onClick={() => this.setState({show: true})}>
         Sign In
       </Button>
 

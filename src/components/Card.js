@@ -1,7 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-
+// import {bindActionCreators} from 'redux'
+// import {getAllRev} from '../actions'
 import MyModal from './MyModal'
+import {Image, Panel} from 'react-bootstrap'
+
 
 class Card extends React.Component {
   constructor(props) {
@@ -15,6 +18,12 @@ class Card extends React.Component {
       showModal: !this.state.showModal
     })
   }
+
+  // componentDidMount() {
+  // this.props.getAllRev()
+  // }
+
+
   render() {
     const {
       card: {
@@ -32,7 +41,7 @@ class Card extends React.Component {
         <h5 className="card-title">{name}</h5> <span>${price}</span>
       </div>
       <div className="card-body">
-        <img className="rounded-top" src={img} alt="Delicious!"/>
+        <Image className="rounded-top" src={img} alt="Delicious!" rounded/>
         <div className="averageReview"></div>
         <p className="card-text">{description}</p>
       </div>
@@ -45,5 +54,5 @@ class Card extends React.Component {
 }
 
 const mapStateToProps = ({list, reviewList}) => ({list, reviewList})
-
+// const mapDispatchToProps = dispatch => bindActionCreators({getAllRev}, dispatch)
 export default connect(mapStateToProps)(Card)

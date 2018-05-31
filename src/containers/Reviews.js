@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Review from '../components/Review'
 import { bindActionCreators } from 'redux'
+import {Button} from 'react-bootstrap'
+import { getAllRev, postReview } from '../actions'
+import Review from '../components/Review'
 import AddReview from '../components/AddReview'
-import { getAllRev } from '../actions'
-import { postReview } from '../actions'
 
 
 
@@ -20,14 +20,14 @@ class Reviews extends Component{
     this.props.getAllRev()
   }
 
-
   toggleReview = () => {
     this.setState({review: !this.state.review});
   }
 
-  handleReview = (title, description, rating, userID, snackID) => {
-    this.props.postReview(this.props.snackId, userID, title, description, rating)
+  handleReview = (title, description, rating) => {
+    this.props.postReview(this.props.snackId, this.props.userState.id, title, description, rating)
   }
+
 
   render(){
     const filtered = this.props.reviewList.filter(rev => rev.snack_id === this.props.snackId)
@@ -37,26 +37,25 @@ class Reviews extends Component{
       toggleReview
     } = this
     return (
-      <div>
+      <div >
       <div id="averageRating">
         { averages ?  `Average User Rating: ${averages}` : null}
       </div>
       {
         filtered.map(review => <Review key={review.id} review={review} />)
       }
-      {
-      this.state.review
-        ? <AddReview {...{toggleReview, handleReview}}/>
-        : null
-      }
-        <button id="addreviewBtn" onClick={toggleReview}>{this.state.review === false ? "Add Review" : "Cancel"}</button>
+        { this.state.review ?
+         <AddReview {...{toggleReview, handleReview}}/>
+          : null}
+
+  {(this.props.userState.id && filtered.every(review => this.props.userState.id !== review.user_id)) ? <Button bsStyle="success" id="addreviewBtn" onClick={toggleReview}>{this.state.review === false ? "Add Review" : "Cancel"}</Button> : null }
       </div>
     )
 
   }
 }
 
-const mapStateToProps = ({ reviewList }) => ({ reviewList })
+const mapStateToProps = ({ reviewList, userState }) => ({ reviewList, userState })
 const mapDispatchToProps = dispatch => bindActionCreators({ getAllRev, postReview }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Reviews)

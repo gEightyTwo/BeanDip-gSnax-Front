@@ -2,7 +2,7 @@ import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-import {Modal, Button} from 'react-bootstrap'
+import {Modal, Button, Image} from 'react-bootstrap'
 
 import Reviews from '../containers/Reviews'
 
@@ -22,8 +22,8 @@ class MyModal extends React.Component {
   }
   render() {
     return (<div className="modal-container">
-      <Button bsStyle="primary" bsSize="large" onClick={() => this.setState({show: true})}>
-        More
+      <Button bsStyle="info" bsSize="large" onClick={() => this.setState({show: true})} block>
+        More Information
       </Button>
 
       <Modal show={this.state.show} onHide={this.handleHide} container={this} aria-labelledby="contained-modal-title">
@@ -34,7 +34,7 @@ class MyModal extends React.Component {
         </Modal.Header>
         <Modal.Body>
           <div className="block-description">
-          <img alt="product" src={`${this.props.img}`}/>
+          <Image alt="product" src={`${this.props.img}`} rounded/>
           <p>
             {this.props.description}
           </p>
