@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Review from '../components/Review'
 import { bindActionCreators } from 'redux'
-import AddReview from '../components/AddReview'
+
 import { getAllRev, postReview } from '../actions'
+import Review from '../components/Review'
+import AddReview from '../components/AddReview'
 
 
 
@@ -27,6 +28,7 @@ class Reviews extends Component{
     this.props.postReview(this.props.snackId, this.props.userState.id, title, description, rating)
   }
 
+
   render(){
     const filtered = this.props.reviewList.filter(rev => rev.snack_id === this.props.snackId)
     const averages = filtered.map(ele => ele.rating).reduce((total, rate) => total + parseInt(rate), 0) / filtered.length
@@ -42,11 +44,11 @@ class Reviews extends Component{
       {
         filtered.map(review => <Review key={review.id} review={review} />)
       }
-        {this.state.review ?
+        { this.state.review ?
          <AddReview {...{toggleReview, handleReview}}/>
           : null}
 
-  {this.props.userState.id ? <button id="addreviewBtn" onClick={toggleReview}>{this.state.review === false ? "Add Review" : "Cancel"}</button> : null }
+  {(this.props.userState.id && filtered.every(review => this.props.userState.id !== review.user_id)) ? <button id="addreviewBtn" onClick={toggleReview}>{this.state.review === false ? "Add Review" : "Cancel"}</button> : null }
       </div>
     )
 

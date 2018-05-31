@@ -5,7 +5,6 @@ import { request } from '../helpers'
 import {loginSetState} from '../actions'
 import {Modal, Button} from 'react-bootstrap'
 
-// import Reviews from '../containers/Reviews'
 
 class SignInModal extends React.Component {
   constructor(props, context) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {bindActionCreators} from 'redux'
-import {getAllRev} from '../actions'
+// import {bindActionCreators} from 'redux'
+// import {getAllRev} from '../actions'
 import MyModal from './MyModal'
 
 class Card extends React.Component {

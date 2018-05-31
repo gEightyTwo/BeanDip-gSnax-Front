@@ -1,5 +1,6 @@
 #cardContainer {
   justify-content: space-around;
+  padding-top: 50px;
 }
 
 #averageRating {
@@ -105,11 +106,12 @@ img {
 }
 
 .jumbotron h2 {
-  margin-top: 0;
+  /*margin-top: 0;*/
   text-align: center;
 }
 
 .jumbotron {
+  height: 400px;
   position: relative;
   padding-top: 50px;
   text-align: center;
@@ -130,9 +132,10 @@ img {
 }
 
 .navbar {
-  margin: 0.5em;
+  margin: 0;
   width: 100%;
 }
+/*
 .navbar-brand{
   font-size: 35px;
 }
@@ -144,7 +147,7 @@ img {
 .navlinks {
   width: 300px;
   text-align: right;
-}
+}*/
 
 /* .navlinks btn {
   display: inline-block;

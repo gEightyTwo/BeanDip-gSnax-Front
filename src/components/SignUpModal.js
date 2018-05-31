@@ -25,7 +25,7 @@ class SignUpModal extends React.Component {
     request('/auth/token','post', { username: email, password: password })
     .then(response => {
       this.setState({ showErrorMessage: false })
-      localStorage.setItem('token', JSON.stringify(response.data))
+      localStorage.setItem('token', response.data.token)
       return request('/auth/token')
     })
     .then(response => {
@@ -48,7 +48,7 @@ class SignUpModal extends React.Component {
   }
   render() {
     return (<div className="modal-container">
-      <Button bsStyle="primary" bsSize="large" onClick={() => this.setState({show: true})}>
+      <Button bsStyle="link" bsSize="large" onClick={() => this.setState({show: true})}>
         Sign Up!
       </Button>
 

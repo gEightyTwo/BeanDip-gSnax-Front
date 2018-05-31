@@ -1,8 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Button} from 'react-bootstrap'
 import {bindActionCreators} from 'redux'
-import { withAuthentication, AuthenticationService } from '../helpers'
+// import { withAuthentication, AuthenticationService } from '../helpers'
 import {Button} from 'react-bootstrap'
 import {logoutSetState} from '../actions'
 
@@ -17,7 +16,6 @@ class Navbar extends React.Component{
 render(){
   return(
   <header>
-  <div className="">
     <div className="nav">
       <div className='navbar'>
         <a className="navbar-brand">BeanDip</a>
@@ -44,7 +42,6 @@ render(){
         </div>
       </div>
     </div>
-  </div>
 
 </header>)
 }
