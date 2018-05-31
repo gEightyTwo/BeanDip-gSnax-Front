@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
-import {Button, ButtonToolbar} from 'react-bootstrap'
+import {Button, ButtonGroup} from 'react-bootstrap'
 import { editReview, deleteReview } from '../actions'
 
 
@@ -46,7 +46,7 @@ class Review extends React.Component {
       <div className="review-block">
       <div className="row">
         <div className="col-12">
-          <div className="review-block-user">{this.props.userState.email} says:</div>
+          <div className="review-block-user">{this.props.userState.first_name} says:</div>
           <div className="review-block-title">{title}</div>
           <div className="review-block-rate">
             <button type="button" className={rating >= 1 ? 'btn btn-warning btn-xs' : 'btn btn-default btn-grey btn-xs'} aria-label="Left Align">
@@ -67,10 +67,10 @@ class Review extends React.Component {
           </div>
           Description:
           <div className="review-block-description">{text}</div>
-            {user_id === this.props.userState.id ? <ButtonToolbar>
+            {user_id === this.props.userState.id ? <ButtonGroup>
               <Button bsSize="xsmall" bsStyle="info" onClick={this.editReview}>Edit</Button>
               <Button bsSize="xsmall" bsStyle="danger" onClick={this.removeReview}>Delete</Button>
-            </ButtonToolbar> : null}
+            </ButtonGroup> : null}
         </div>
       </div>
     </div>)

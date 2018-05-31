@@ -48,7 +48,7 @@ class SignUpModal extends React.Component {
   }
   render() {
     return (<div className="modal-container">
-      <Button bsStyle="link" bsSize="large" onClick={() => this.setState({show: true})}>
+      <Button bsStyle="success" bsSize="large" onClick={() => this.setState({show: true})}>
         Sign Up!
       </Button>
 

@@ -19,7 +19,7 @@ const list = (state = INITIAL_VALUE, action) => {
       return state
   }
 }
-const userState = (state = {id:null}, action) => {
+const userState = (state = {}, action) => {
   switch(action.type){
     case SET_USERSTATE:
       return action.payload

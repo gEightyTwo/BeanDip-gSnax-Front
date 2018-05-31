@@ -41,7 +41,7 @@ class SignInModal extends React.Component {
   }
   render() {
     return (<div className="modal-container">
-      <Button bsStyle="primary" bsSize="large" onClick={() => this.setState({show: true})}>
+      <Button bsStyle="link" bsSize="large" onClick={() => this.setState({show: true})}>
         Sign In
       </Button>
 

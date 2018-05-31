@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
+import {Button} from 'react-bootstrap'
 import { getAllRev, postReview } from '../actions'
 import Review from '../components/Review'
 import AddReview from '../components/AddReview'
@@ -48,7 +48,7 @@ class Reviews extends Component{
          <AddReview {...{toggleReview, handleReview}}/>
           : null}
 
-  {(this.props.userState.id && filtered.every(review => this.props.userState.id !== review.user_id)) ? <button id="addreviewBtn" onClick={toggleReview}>{this.state.review === false ? "Add Review" : "Cancel"}</button> : null }
+  {(this.props.userState.id && filtered.every(review => this.props.userState.id !== review.user_id)) ? <Button bsStyle="success" id="addreviewBtn" onClick={toggleReview}>{this.state.review === false ? "Add Review" : "Cancel"}</Button> : null }
       </div>
     )
 
