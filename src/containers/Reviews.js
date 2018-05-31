@@ -37,7 +37,7 @@ class Reviews extends Component{
       toggleReview
     } = this
     return (
-      <div >
+      <div id="reviewContainer" className="container-fluid">
       <div id="averageRating">
         { averages ?  `Average User Rating: ${averages}` : null}
       </div>
