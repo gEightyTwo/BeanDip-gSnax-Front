@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-
+import {bindActionCreators} from 'redux'
+import {getAllRev} from '../actions'
 import MyModal from './MyModal'
 
 class Card extends React.Component {
@@ -15,6 +16,12 @@ class Card extends React.Component {
       showModal: !this.state.showModal
     })
   }
+
+  // componentDidMount() {
+  // this.props.getAllRev()
+  // }
+
+
   render() {
     const {
       card: {
@@ -45,5 +52,5 @@ class Card extends React.Component {
 }
 
 const mapStateToProps = ({list, reviewList}) => ({list, reviewList})
-
+// const mapDispatchToProps = dispatch => bindActionCreators({getAllRev}, dispatch)
 export default connect(mapStateToProps)(Card)

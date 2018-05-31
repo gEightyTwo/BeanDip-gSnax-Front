@@ -1,7 +1,7 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import { request, AuthenticationService } from '../helpers'
+import { request } from '../helpers'
 import {loginSetState} from '../actions'
 import {Modal, Button} from 'react-bootstrap'
 
@@ -25,7 +25,7 @@ class SignUpModal extends React.Component {
     request('/auth/token','post', { username: email, password: password })
     .then(response => {
       this.setState({ showErrorMessage: false })
-      localStorage.setItem('token', response.data.token)
+      localStorage.setItem('token', JSON.stringify(response.data))
       return request('/auth/token')
     })
     .then(response => {

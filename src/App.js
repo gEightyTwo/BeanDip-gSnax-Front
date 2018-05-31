@@ -12,6 +12,12 @@ import { getAllSnax, getAllRev} from './actions'
 
 export class App extends Component {
   componentDidMount(){
+    const loggedIn = JSON.parse(localStorage.getItem('token'))
+    console.log(loggedIn);
+    if(loggedIn){
+      this.props.loginSetState(loggedIn)
+    }
+
     this.props.getAllSnax()
     this.props.getAllRev()
   }

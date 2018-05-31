@@ -19,7 +19,6 @@ export const getAllSnax = () => {
   return (dispatch) => {
     axios.get('http://localhost:3000/api/snacks')
     .then((response) => {
-      console.log(response.data);
       dispatch({
         type: GET_ALL_SNAX,
         payload: response.data
@@ -59,11 +58,11 @@ export const postReview = (snackId, usersId, title, text, rating) => {
   return (dispatch) => {
     axios.post(`http://localhost:3000/reviews/${snackId}`, {usersId, title, text, rating})
     .then((response) => {
-
-      dispatch({
-        type: POST_REVIEW,
-        payload: response.data
-      })
+      dispatch(
+        getAllRev()
+      //   type: POST_REVIEW,
+      //   payload: response.data
+      )
     })
   }
 }

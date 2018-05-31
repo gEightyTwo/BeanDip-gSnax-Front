@@ -4,7 +4,6 @@ import { GET_ALL_SNAX, GET_ALL_REV, SET_USERSTATE } from './actions'
 const INITIAL_VALUE = []
 
 const reviewList = (state = [], action) => {
-  console.log(state, action)
   switch(action.type){
     case GET_ALL_REV:
       return action.payload
@@ -13,7 +12,6 @@ const reviewList = (state = [], action) => {
   }
 }
 const list = (state = INITIAL_VALUE, action) => {
-  console.log(state, action)
   switch(action.type){
     case GET_ALL_SNAX:
       return action.payload

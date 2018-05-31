@@ -1,9 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { withAuthentication, AuthenticationService } from '../helpers'
 import {Button} from 'react-bootstrap'
-
-// import {Link} from 'react-router-dom'
 import SignInModal from './SignInModal'
 import SignUpModal from './SignUpModal'
 
