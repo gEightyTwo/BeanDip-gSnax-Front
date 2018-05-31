@@ -4,11 +4,11 @@ export default(props) => (<footer>
   <div className="footer page-footer font-small">
     <div className="container text-center text-md-left">
       <div className="row text-center text-md-left mt-3 pb-3">
-        <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <div className="afterBox col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 className="text-uppercase mb-4 font-weight-bold">BeanDip</h6>
           <p>Here you can explore all the different snacks and compare how they would be as a Dip or even a Dipping Tool.</p>
         </div>
-        <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <div className="afterBox col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
           <h6 className="text-uppercase mb-4 font-weight-bold">Products</h6>
           <p>
             <a href="#!">Snacks</a>
@@ -20,7 +20,7 @@ export default(props) => (<footer>
             <a href="#!">Judgement</a>
           </p>
         </div>
-        <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <div className="afterBox col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
           <h6 className="text-uppercase mb-4 font-weight-bold">Useful links</h6>
           <p>
             <a href="#!">Your Account</a>
@@ -36,7 +36,7 @@ export default(props) => (<footer>
           </p>
         </div>
 
-        <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <div className="afterBox col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
           <p>
             <i className="fa fa-home mr-3"></i>Galvanize</p>
