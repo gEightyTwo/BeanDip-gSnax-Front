@@ -28,6 +28,7 @@ img {
 .card-text {
   height: auto;
   padding-bottom: auto;
+  font-family: "Helvetica Neue"
 }
 
 .card {
@@ -167,7 +168,11 @@ img {
   border: solid gray 2px;
   /*color: black;*/
   /*opacity: 0.1;*/
-  background-image: url("https://cdn.homedit.com/wp-content/uploads/2015/05/beautiful-pantry-design-system.jpg");
+  background-image: url("https://holiday.wholefoodsmarket.com/static/1036/01.jpg");
+  background-size: cover;
   width: 100%;
   height: 100%;
+}
+.afterBox{
+  background-color: rgba(255,255,255, 0.75)
 }
