@@ -11,12 +11,15 @@ class SignInModal extends React.Component {
     super(props, context);
 
     this.handleHide = this.handleHide.bind(this);
-
+    this.handleError = this.handleError.bind(this);
     this.state = {
-      show: false
+      show: false,
+      error: false
     };
   }
-
+  handleError() {
+    this.setState({error: true})
+  }
   handleHide() {
     this.setState({show: false});
   }
@@ -36,7 +39,8 @@ class SignInModal extends React.Component {
     })
     .catch(error => {
       console.log(error)
-      this.setState({showErrorMessage: true})
+      this.handleError
+      document.querySelector('#errorBox').classList.remove('errorMess')
     })
   }
   render() {
@@ -63,6 +67,10 @@ class SignInModal extends React.Component {
               <label htmlFor="inputPassword">Password</label>
               <input type="password" className="form-control" name="inputPassword" placeholder="Password"/>
             </div>
+            <small id="errorBox" className="errorMess form-text text-muted">No user found with those credentials</small>
+            {
+              // this.state.error ? <div>User not found</div> : console.log('no error')
+            }
             <button type="submit" className="btn btn-primary">Submit</button>
           </form>
 
