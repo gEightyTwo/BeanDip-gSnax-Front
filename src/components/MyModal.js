@@ -2,7 +2,7 @@ import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-import {Modal, Button, Image} from 'react-bootstrap'
+import {Modal, Button, Image, Well} from 'react-bootstrap'
 
 import Reviews from '../containers/Reviews'
 
@@ -35,9 +35,9 @@ class MyModal extends React.Component {
         <Modal.Body>
           <div className="block-description">
           <Image alt="product" src={`${this.props.img}`} rounded/>
-          <p>
+          <Well bsSize="large">
             {this.props.description}
-          </p>
+          </Well>
         </div>
           <Reviews snackId={this.props.ogSnackId}/>
         </Modal.Body>
